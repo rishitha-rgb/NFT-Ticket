@@ -1,8 +1,6 @@
-Here’s a clean, professional **README.md** file for your **Soroban NFT Ticketing Smart Contract** project — formatted in standard GitHub style with all requested sections included:
+# 🎟️ Soroban NFT Event Ticketing Smart Contract
 
 ---
-
-# 🎟️ Soroban NFT Event Ticketing Smart Contract
 
 ## 🧾 Project Title
 
@@ -12,100 +10,290 @@ Here’s a clean, professional **README.md** file for your **Soroban NFT Ticketi
 
 ## 📖 Project Description
 
-This project implements a **decentralized NFT ticketing smart contract** on the **Soroban** smart contract platform (built on the Stellar network).
-Each event ticket is minted as a **unique, verifiable, and non-fungible token (NFT)**, assigned to a specific user and event. The contract ensures **secure ownership, transferability, and validation** of tickets without centralized intermediaries.
+This project implements a **decentralized NFT-based ticketing system** using the **Soroban smart contract platform** on the **Stellar blockchain**.
 
-This smart contract eliminates issues like counterfeit tickets, duplicate entries, and ticket reselling scams by leveraging **blockchain immutability and transparency**.
+Each ticket is represented as a **Non-Fungible Token (NFT)** with a unique identity and ownership stored on-chain. The system enables **secure minting, transfer, and validation** of event tickets without relying on centralized authorities.
+
+It eliminates:
+
+* ❌ Counterfeit tickets
+* ❌ Duplicate entries
+* ❌ Unauthorized resale
+
+By leveraging:
+
+* Blockchain immutability
+* Decentralized verification
+* Cryptographic ownership
 
 ---
 
 ## 🎯 Project Vision
 
-The vision of this project is to create a **transparent and tamper-proof digital ticketing ecosystem** where event organizers and attendees can trust the authenticity of every ticket issued.
-By integrating NFT technology with decentralized smart contracts, the system aims to replace traditional centralized ticketing systems with a **trustless, automated, and user-owned model**.
+To create a **transparent, tamper-proof, and trustless ticketing ecosystem** where:
 
-**Long-term goal:**
-Enable full **Web3 ticketing infrastructure** for concerts, sports, and conferences — including event validation, resale tracking, and real-time on-chain verification.
+* Users fully own their tickets
+* Event organizers can issue verifiable NFTs
+* Ticket validation is done securely on-chain
+
+### 🌍 Long-Term Goal
+
+Build a complete **Web3 ticketing infrastructure** for:
+
+* Concerts 🎵
+* Sports ⚽
+* Conferences 🎤
+
+---
+
+## 🧠 System Components
+
+### 🔹 1. Smart Contract (Soroban)
+
+* Written in Rust (`#![no_std]`)
+* Handles core logic:
+
+  * Ticket minting
+  * Ownership tracking
+  * Ticket validation
+  * Transfer control
+
+---
+
+### 🔹 2. Blockchain Layer (Stellar Testnet)
+
+* Stores ticket data on-chain
+* Ensures:
+
+  * Immutability
+  * Transparency
+  * Security
+
+---
+
+### 🔹 3. Storage Layer
+
+* Uses **Soroban Instance Storage**
+* Key-value based persistent storage
+* Efficient on-chain data management
+
+---
+
+### 🔹 4. User Interaction Layer (CLI / Future DApp)
+
+* Interact via:
+
+  * Soroban CLI
+  * Future Web3 frontend
+
+---
+
+## 🏗️ System Architecture
+
+```id="f1p0x9"
+User → CLI / DApp → Soroban Smart Contract → Stellar Blockchain
+```
+
+---
+
+## 📁 Project Structure
+
+```id="l9u5av"
+NFT-Ticket/
+├── contracts/              # Smart contract source code
+│   ├── src/
+│   │   └── lib.rs          # Core contract logic
+│   ├── Cargo.toml          # Contract dependencies
+│   └── README.md
+├── Cargo.toml              # Workspace configuration
+├── Cargo.lock
+├── target/                 # Compiled output
+└── README.md               # Project documentation
+```
+
+---
+
+## ⚙️ Prerequisites
+
+Before running this project, ensure you have:
+
+* 🦀 **Rust & Cargo** (latest version)
+* 🌐 **Soroban CLI (stellar CLI)**
+* 💻 **Git**
+* 🧪 **Stellar Testnet account**
+
+---
+
+## 🚀 Getting Started
+
+### 🔹 1. Clone Repository
+
+```id="0y0q1z"
+git clone https://github.com/rishitha-rgb/NFT-Ticket.git
+cd NFT-Ticket
+```
+
+---
+
+### 🔹 2. Build Smart Contract
+
+```id="6vj7cz"
+cargo build
+```
+
+---
+
+### 🔹 3. Compile to WASM
+
+```id="w1o9pm"
+cargo build --target wasm32-unknown-unknown --release
+```
+
+---
+
+### 🔹 4. Deploy Contract
+
+```id="m8bz6o"
+stellar contract deploy \
+--wasm target/wasm32-unknown-unknown/release/contract.wasm \
+--network testnet
+```
 
 ---
 
 ## ✨ Key Features
 
-### 1. 🪙 **Minting Unique NFT Tickets**
+### 🪙 NFT Ticket Minting
 
-Each ticket is minted with a **unique ticket ID**, associated with an owner and event name. The system auto-increments ticket IDs for each minting transaction.
-
-### 2. 🔍 **View Ticket Details**
-
-Users can query ticket details such as ticket ID, owner address, event name, and usage status directly on-chain.
-
-### 3. ✅ **Ticket Validation (Use Ticket)**
-
-Once a user enters the event venue, the ticket is **marked as used**, preventing reuse or duplication.
-
-### 4. 🔁 **Secure Ownership Transfer**
-
-Ticket owners can **transfer ownership** to another user before the ticket is used. Once validated, transfer becomes impossible to maintain integrity.
-
-### 5. 🧱 **Tamper-Proof Storage**
-
-All ticket data is stored immutably using **Soroban’s instance storage**, ensuring security and transparency.
-
-### 6. 📜 **Logging & Auditability**
-
-Every ticket creation, transfer, and validation event is logged, allowing for full **traceability** and audit trails.
+* Unique ticket ID generation
+* Owner association
+* Event metadata binding
 
 ---
 
-## 🚀 Future Scope
+### 🔍 Ticket Query
 
-1. **Integration with Wallets & DApps**
+* Retrieve ticket details
+* Transparent verification
 
-   * Connect with Stellar wallets or custom DApps for direct minting and ticket management through UI.
+---
 
-2. **Event Organizer Management Layer**
+### ✅ Ticket Validation
 
-   * Allow verified event creators to mint batches of tickets for specific events with metadata (venue, time, price).
+* Mark ticket as used
+* Prevent reuse
 
-3. **Secondary Market & Resale Control**
+---
 
-   * Enable a controlled ticket resale marketplace with royalty mechanisms to benefit event organizers and artists.
+### 🔁 Ownership Transfer
 
-4. **QR Code Verification System**
+* Transfer before usage
+* Disabled after validation
 
-   * Generate a dynamic QR for each NFT ticket for easy on-site validation via mobile apps.
+---
 
-5. **Dynamic Metadata Extension**
+### 🧱 Tamper-Proof Storage
 
-   * Store additional NFT metadata such as seat number, section, or VIP access rights for premium ticketing systems.
+* Immutable blockchain storage
 
-6. **Cross-Chain Ticket Verification**
+---
 
-   * Expand compatibility with **other chains** using bridges, enabling cross-platform NFT ticket validation.
+### 📜 Logging & Auditability
+
+* Track all transactions
+
+---
+
+## ⚙️ Smart Contract Functions
+
+| Function Name                           | Description          |
+| --------------------------------------- | -------------------- |
+| `mint_ticket(owner, event_name)`        | Creates NFT ticket   |
+| `view_ticket(ticket_id)`                | Fetch ticket details |
+| `use_ticket(ticket_id)`                 | Validate ticket      |
+| `transfer_ticket(ticket_id, new_owner)` | Transfer ownership   |
+
+---
+
+### 🧪 Function Signatures
+
+```rust id="0m8l5f"
+pub fn mint_ticket(env: Env, owner: Address, event_name: String) -> u32;
+pub fn view_ticket(env: Env, ticket_id: u32) -> Ticket;
+pub fn use_ticket(env: Env, ticket_id: u32);
+pub fn transfer_ticket(env: Env, ticket_id: u32, new_owner: Address);
+```
+
+---
+
+## 🔐 Data Model
+
+| Field      | Type    | Description       |
+| ---------- | ------- | ----------------- |
+| ticket_id  | u32     | Unique identifier |
+| owner      | Address | Ticket owner      |
+| event_name | String  | Event name        |
+| is_used    | bool    | Usage status      |
 
 ---
 
 ## 🧩 Tech Stack
 
-* **Language:** Rust (`#![no_std]`)
-* **Blockchain Platform:** Soroban (Stellar Smart Contracts)
-* **Contract Framework:** `soroban_sdk`
-* **Storage:** Soroban Instance Storage
-* **Deployment:** Soroban CLI / Stellar Testnet
+| Layer      | Technology          |
+| ---------- | ------------------- |
+| Language   | Rust (`#![no_std]`) |
+| Blockchain | Soroban (Stellar)   |
+| SDK        | soroban_sdk         |
+| Storage    | Instance Storage    |
+| Deployment | Soroban CLI         |
 
 ---
 
-## ⚙️ Example Functions
+## 🚀 Future Scope
 
-| Function Name                           | Description                                             |
-| --------------------------------------- | ------------------------------------------------------- |
-| `mint_ticket(owner, event_name)`        | Mints a new NFT ticket and returns its unique ID.       |
-| `view_ticket(ticket_id)`                | Retrieves all details of a ticket.                      |
-| `use_ticket(ticket_id)`                 | Marks the ticket as used/validated.                     |
-| `transfer_ticket(ticket_id, new_owner)` | Transfers ticket ownership to another user (if unused). |
+* Wallet integration (Freighter)
+* Frontend DApp interface
+* NFT resale marketplace
+* QR-based ticket validation
+* Metadata extension (VIP, seat info)
+* Cross-chain interoperability
 
 ---
 
-## Contract Details
-Contract ID: CCM7X7Z7GJYTFT5YWJSFRNHBK2UTH452ZX4XV6VJ2SNDXSJRU63UK7P6
-![alt text](image.png)
+## 🔒 Security Features
+
+* Ownership validation
+* Anti-duplication mechanism
+* Immutable storage
+* Controlled state transitions
+
+---
+
+## 📦 Contract Details
+
+**Contract ID:**
+
+```id="6yr7bc"
+CCM7X7Z7GJYTFT5YWJSFRNHBK2UTH452ZX4XV6VJ2SNDXSJRU63UK7P6
+```
+
+---
+
+## 🖼️ Output
+
+![NFT Ticket](image.png)
+
+---
+
+## 👥 Contributors
+
+* **Rishitha Suhani D Souza**
+* **Manya Sohan D.H**
+
+---
+
+## 📝 License
+
+This project is developed for **educational and blockchain learning purposes**.
+
+---
