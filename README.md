@@ -281,8 +281,8 @@ CCM7X7Z7GJYTFT5YWJSFRNHBK2UTH452ZX4XV6VJ2SNDXSJRU63UK7P6
 
 ## 🖼️ Output
 
-![NFT Ticket](image.png)
-
+![NFT Ticket](image 1.png)
+![NFT Ticket](image 2.png)
 ---
 
 ## 👥 Contributors
