@@ -229,16 +229,13 @@ During event entry, the smart contract validates:
 
 ## 🔹 Output Image 1
 
-![Output 1](image%201.png)
+![Output 1](./image1.png)
 
 ---
 
 ## 🔹 Output Image 2
 
-![Output 2](image%202.png)
-
----
-
+![Output 2](./image2.png)
 # 📈 Advantages of the System
 
 - Eliminates counterfeit tickets
